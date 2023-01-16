@@ -39,11 +39,11 @@ public class AfteroweVouchery extends JavaPlugin {
         }
         this.API = AfteroweAPI.getPlugin();
 
-
         this.loadConfiguration();
 
         this.registerCommands();
         this.registerListeners();
+        // test
 
         this.newPluginUpdate = this.getAPI().isPluginUpdate(this, "https://raw.githubusercontent.com/querko242/AfteroweVouchery/main/version.txt");
     }
