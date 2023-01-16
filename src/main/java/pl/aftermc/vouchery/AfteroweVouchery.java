@@ -83,6 +83,7 @@ public class AfteroweVouchery extends JavaPlugin {
     private void registerListeners() {
         new PlayerInteract(this);
         new PlayerJoin(this);
+        // asdasd
     }
 
     public AfteroweAPI getAPI() {
