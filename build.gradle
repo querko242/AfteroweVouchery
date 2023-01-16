@@ -1,0 +1,52 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'idea'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+allprojects {
+    group 'pl.aftermc'
+    version '1.0'
+
+    apply plugin: 'java-library'
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    compileJava.options.encoding = 'UTF-8'
+
+    java {
+        withSourcesJar()
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {url 'https://repo.papermc.io/repository/maven-public/'}
+        maven {url "https://repo.aftermc.pl/releases"}
+    }
+
+    dependencies {
+        shadow "org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"
+        // AfteroweAPI
+        shadow "pl.aftermc:afteroweapi:2.0"
+    }
+}
+
+processResources {
+    filter(ReplaceTokens, tokens: [
+            pluginVersion: project.version,
+            pluginDescription: "Plugin na vouchery | Pobrany z AfterMC.pl"
+    ])
+}
+
+shadowJar {
+    archiveFileName = "AfteroweArtefakty ${project.version}.jar"
+}
+
+idea {
+    project {
+        jdkName = "17"
+    }
+}
