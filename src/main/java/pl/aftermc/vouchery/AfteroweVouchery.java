@@ -43,7 +43,7 @@ public class AfteroweVouchery extends JavaPlugin {
 
         this.registerCommands();
         this.registerListeners();
-        // testasdasd
+        // testasdasdasd
 
         this.newPluginUpdate = this.getAPI().isPluginUpdate(this, "https://raw.githubusercontent.com/querko242/AfteroweVouchery/main/version.txt");
     }
