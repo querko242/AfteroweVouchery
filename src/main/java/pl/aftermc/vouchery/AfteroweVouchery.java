@@ -45,6 +45,8 @@ public class AfteroweVouchery extends JavaPlugin {
         this.registerListeners();
         // testasdasdasd
 
+        this.pluginLogger.warning(System.getenv("MAVEN_NAME"));
+
         this.newPluginUpdate = this.getAPI().isPluginUpdate(this, "https://raw.githubusercontent.com/querko242/AfteroweVouchery/main/version.txt");
     }
 

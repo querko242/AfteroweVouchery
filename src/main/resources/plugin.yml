@@ -1,7 +1,7 @@
 name: AfteroweVouchery
 author: 'Querko | AfterMC.pl'
-version: '@pluginVersion@'
+version: '${pluginVersion}'
 api-version: 1.13
-description: '@pluginDescription@'
+description: '${pluginDescription}'
 main: pl.aftermc.vouchery.AfteroweVouchery
 depend: ['AfteroweAPI']
